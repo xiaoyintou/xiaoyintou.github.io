@@ -84,15 +84,21 @@
 
 
 
-<meta name="description" content="找点乐子，一块乐呵乐呵得了。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小尹头的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="大家都知道，在日常的项目开发过程中，系统tabbar提供的功能，并不能满足项目的需求，这就要求我们可以高度灵活的定制自己的tabbar样式，本文将要讲解怎样实现自定义的tabbar。
+#首先新建一个继承于UITabBarController的基础类，在- (void)viewDidLoad里面我们可以准备设置好自定义tabbar上需要显示的图标和标题资源，自定义tabbar的初始化也要在此方法中完">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义TabBar,实现和系统TabBar一样的效果">
+<meta property="og:url" content="http://yoursite.com/2016/12/08/自定义TabBar-实现和系统TabBar一样的效果/index.html">
 <meta property="og:site_name" content="小尹头的博客">
-<meta property="og:description" content="找点乐子，一块乐呵乐呵得了。">
+<meta property="og:description" content="大家都知道，在日常的项目开发过程中，系统tabbar提供的功能，并不能满足项目的需求，这就要求我们可以高度灵活的定制自己的tabbar样式，本文将要讲解怎样实现自定义的tabbar。
+#首先新建一个继承于UITabBarController的基础类，在- (void)viewDidLoad里面我们可以准备设置好自定义tabbar上需要显示的图标和标题资源，自定义tabbar的初始化也要在此方法中完">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/65e4f1e6jw1faji35rcstj20ku112ab0.jpg">
+<meta property="og:updated_time" content="2016-12-08T09:15:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小尹头的博客">
-<meta name="twitter:description" content="找点乐子，一块乐呵乐呵得了。">
+<meta name="twitter:title" content="自定义TabBar,实现和系统TabBar一样的效果">
+<meta name="twitter:description" content="大家都知道，在日常的项目开发过程中，系统tabbar提供的功能，并不能满足项目的需求，这就要求我们可以高度灵活的定制自己的tabbar样式，本文将要讲解怎样实现自定义的tabbar。
+#首先新建一个继承于UITabBarController的基础类，在- (void)viewDidLoad里面我们可以准备设置好自定义tabbar上需要显示的图标和标题资源，自定义tabbar的初始化也要在此方法中完">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/65e4f1e6jw1faji35rcstj20ku112ab0.jpg">
 
 
 
@@ -120,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/08/自定义TabBar-实现和系统TabBar一样的效果/"/>
 
 
 
 
 
-  <title> 小尹头的博客 </title>
+  <title> 自定义TabBar,实现和系统TabBar一样的效果 | 小尹头的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -147,9 +153,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -228,9 +232,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -263,10 +267,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/12/08/自定义TabBar-实现和系统TabBar一样的效果/" itemprop="url">
-                  自定义TabBar,实现和系统TabBar一样的效果
-                </a>
+                自定义TabBar,实现和系统TabBar一样的效果
               
             
           </h1>
@@ -315,9 +316,7 @@
       
 
       
-        
-          
-            <p>大家都知道，在日常的项目开发过程中，系统tabbar提供的功能，并不能满足项目的需求，这就要求我们可以高度灵活的定制自己的tabbar样式，本文将要讲解怎样实现自定义的tabbar。</p>
+        <p>大家都知道，在日常的项目开发过程中，系统tabbar提供的功能，并不能满足项目的需求，这就要求我们可以高度灵活的定制自己的tabbar样式，本文将要讲解怎样实现自定义的tabbar。</p>
 <p>#首先<br>新建一个继承于UITabBarController的基础类，在- (void)viewDidLoad里面我们可以准备设置好自定义tabbar上需要显示的图标和标题资源，自定义tabbar的初始化也要在此方法中完成。</p>
 <p>设置图标和标题资源的示例代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//初始化tabbar上要显示的图标和标题</div><div class="line"> NSArray *titles = [NSArray arrayWithObjects:@&quot;首页&quot;, @&quot;钻石&quot;, @&quot;保障&quot;, @&quot;我的&quot;, nil];</div><div class="line"> NSArray *norImages = [NSArray arrayWithObjects:@&quot;首页&quot;, @&quot;钻石&quot;, @&quot;保障&quot;, @&quot;我的&quot;, nil];</div><div class="line"> NSArray *selectImages = [NSArray arrayWithObjects:@&quot;首页2&quot;, @&quot;钻石2&quot;, @&quot;保障2&quot;, @&quot;我的2&quot;, nil];</div><div class="line"> //初始化自定义的tabbar上要显示view</div><div class="line"> YLTabBar *tabbar = [[YLTabBar alloc] initWithFrame:self.tabBar.frame Titles:titles norImages:norImages selectImages:selectImages];</div><div class="line"> self.selectedIndex = 0;</div><div class="line"> //把自定义的view添加到tabbar上</div><div class="line"> [self setValue:tabbar forKeyPath:@&quot;tabBar&quot;];</div></pre></td></tr></table></figure></p>
 <p>#之后<br>我们还要新建一个继承于UITabBar的类，用这个新建的tabbar来替代系统的tabbar。<br>在自定义tabbar的类中我们要定义一个变量，用来记录上一个被选中的按钮<br>以下是代码的实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@interface YLTabBar : UITabBar &#123;</div><div class="line">    NSInteger picNum;</div><div class="line">    NSInteger oldSelect; //用来记录上一个被选中的按钮</div><div class="line">&#125;</div><div class="line">- (instancetype)initWithFrame:(CGRect)frame Titles:(NSArray *)titles norImages:(NSArray *)norImages selectImages:(NSArray *)selectImages;</div></pre></td></tr></table></figure></p>
@@ -328,16 +327,20 @@
 <p>#最后<br>最重要的一件事还没有做，就是设置tabbar上原有view的位置, 放到屏幕之外的位置, 让上面自定义的view来代替原有的view<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">-(void)layoutSubviews&#123;</div><div class="line">    [super layoutSubviews];</div><div class="line">    for (UIView *tabBarButton in self.subviews) &#123;</div><div class="line">        // 判断下是否是UITabBarButton</div><div class="line">        if ([tabBarButton isKindOfClass:NSClassFromString(@&quot;UITabBarButton&quot;)]) &#123;</div><div class="line">            tabBarButton.frame = CGRectMake(-300, 200, 0, 0);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>#在结尾，展示一下我自定义tabbar的效果图<br><img src="http://ww1.sinaimg.cn/large/65e4f1e6jw1faji35rcstj20ku112ab0.jpg" alt=""></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -346,144 +349,34 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/07/hello-world/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="不告诉你">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="小尹头的博客">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="小尹头的博客" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/12/07/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/12/07/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-07T11:57:28+08:00">
-                2016-12-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -491,6 +384,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -648,6 +545,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
