@@ -14,7 +14,7 @@
 <meta property="og:description" content="大家都知道，在日常的项目开发过程中，系统tabbar提供的功能，并不能满足项目的需求，这就要求我们可以高度灵活的定制自己的tabbar样式，本文将要讲解怎样实现自定义的tabbar。
 #首先新建一个继承于UITabBarController的基础类，在- (void)viewDidLoad里面我们可以准备设置好自定义tabbar上需要显示的图标和标题资源，自定义tabbar的初始化也要在此方法中完">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/65e4f1e6jw1faji35rcstj20ku112ab0.jpg">
-<meta property="og:updated_time" content="2016-12-08T09:15:49.000Z">
+<meta property="og:updated_time" content="2016-12-08T09:53:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义TabBar,实现和系统TabBar一样的效果">
 <meta name="twitter:description" content="大家都知道，在日常的项目开发过程中，系统tabbar提供的功能，并不能满足项目的需求，这就要求我们可以高度灵活的定制自己的tabbar样式，本文将要讲解怎样实现自定义的tabbar。
@@ -99,12 +99,13 @@
 <p>当自定义样式做完后，给自己的自定义tab添加响应事件，设置被点击的tab的样式，还原上一个被点击的tab的样式<br>以下是我自定义tab响应事件中的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//被点击的按钮设置被选中的状态</div><div class="line">button.selected = YES;</div><div class="line">//上一个被点击的按钮取消选中的状态</div><div class="line">UIButton *tempButton = (UIButton *)[self viewWithTag:oldSelect];</div><div class="line">tempButton.selected = NO;</div><div class="line">//更新被选中按钮的记录</div><div class="line">oldSelect = button.tag;</div></pre></td></tr></table></figure></p>
 <p> 别忘了给自己的响应触发回调。</p>
 <p>#最后<br>最重要的一件事还没有做，就是设置tabbar上原有view的位置, 放到屏幕之外的位置, 让上面自定义的view来代替原有的view<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">-(void)layoutSubviews&#123;</div><div class="line">    [super layoutSubviews];</div><div class="line">    for (UIView *tabBarButton in self.subviews) &#123;</div><div class="line">        // 判断下是否是UITabBarButton</div><div class="line">        if ([tabBarButton isKindOfClass:NSClassFromString(@&quot;UITabBarButton&quot;)]) &#123;</div><div class="line">            tabBarButton.frame = CGRectMake(-300, 200, 0, 0);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>#Demo下载地址：<br><a href="https://github.com/xiaoyintou/YLTabBar" target="_blank" rel="external">https://github.com/xiaoyintou/YLTabBar</a></p>
 <p>#在结尾，展示一下我自定义tabbar的效果图<br><img src="http://ww1.sinaimg.cn/large/65e4f1e6jw1faji35rcstj20ku112ab0.jpg" alt=""></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/08/自定义TabBar-实现和系统TabBar一样的效果/" data-id="ciwg6d0500001hecen6rcf9d2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/08/自定义TabBar-实现和系统TabBar一样的效果/" data-id="ciwg6sb1o0000once2aoblzgb" class="article-share-link">Share</a>
       
       
     </footer>
